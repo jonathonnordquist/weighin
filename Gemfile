@@ -38,6 +38,8 @@ gem 'pry-rails'
 gem 'factory_bot_rails'
 gem 'faker'
 
+gem 'rubocop', '~> 0.52.1', require: false
+
 group :development, :test do
   gem 'rspec-rails', '~> 2.14.0'
   gem 'pry'
@@ -55,4 +57,3 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
