@@ -48,6 +48,11 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
     docile (1.1.5)
+    draper (2.1.0)
+      actionpack (>= 3.0)
+      activemodel (>= 3.0)
+      activesupport (>= 3.0)
+      request_store (~> 1.0)
     erubis (2.7.0)
     execjs (2.2.2)
     factory_bot (4.8.2)
@@ -116,6 +121,8 @@ GEM
     rake (10.5.0)
     rdoc (4.1.2)
       json (~> 1.4)
+    request_store (1.4.0)
+      rack (>= 1.4)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
     rspec-core (2.14.8)
@@ -188,6 +195,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
+  draper
   factory_bot_rails
   faker
   haml-rails

@@ -6,7 +6,7 @@ class EventsController < ApplicationController
 
   # Get and return a specific event
   def show
-    @event = Event.find(params[:id])
+    @event = Event.find(params[:id]).decorate
   end
 
   # Create a new event object and redirect to people_path

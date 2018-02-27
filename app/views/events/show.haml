@@ -1,6 +1,6 @@
 %h2
   #{@event.name}
-- @event.people.each_with_index do |person, index|
+- @event.people_by_ranking.each_with_index do |person, index|
   %table
     %tr
       %td{class: 'ordinal'}= index
