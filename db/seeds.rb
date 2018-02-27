@@ -4,11 +4,13 @@
 require 'csv'
 require 'pry'
 
-csv_text = File.read(Rails.root.join('weighins.csv'))
-csv = CSV.parse(csv_text, headers: true, encoding: 'ISO-8859-1')
+weighins_csv_text = File.read(Rails.root.join('weighins.csv'))
+participants_csv_text = File.read(Rails.root.join('participants.csv'))
+weighins_csv = CSV.parse(weighins_csv_text, headers: true, encoding: 'ISO-8859-1')
+participants_csv = CSV.parse(participants_csv_text, headers: true, encoding: 'ISO-8859-1')
 current_event = ''
 
-csv.each do |row|
+weighins_csv.each do |row|
   if current_event != row['Event']
     new_event = true
     current_event = row['Event']
@@ -34,4 +36,10 @@ csv.each do |row|
   end
 
   CreateCheckin.call(@person, @event, row['Weight'].to_i, @user)
+end
+
+participants_csv.each do |row|
+  league = League.find_or_create_by(name: row['League'])
+  name = row['Name']
+  Person.find_by(name: name).users[0].update_attributes! league_id: league.id unless Person.find_by(name: name).users[0].league_id
 end
