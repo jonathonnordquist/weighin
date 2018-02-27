@@ -40,4 +40,8 @@ class Person < ActiveRecord::Base
     end
     event_diffs
   end
+
+  def show_league
+    users[0].league.name
+  end
 end
