@@ -1,5 +1,9 @@
 %h2
   #{@person.name}
+
+=link_to(@person.league.name, league_path(@person.league.id))
+
+%br
 - @person.try(:checkin_diffs).each_pair do |event, diffs|
   %table
     %th= event

@@ -1,0 +1,14 @@
+%h2
+  #{@leagues.name}
+- @leagues.each_with_index do |league, index|
+  %table
+    %tr
+      %td{class: 'ordinal'}= index
+      %td{class: "text-left"}=link_to(league.name, league_path(league.id))
+  %br
+%br
+%br
+%br
+%br
+%br
+%h3

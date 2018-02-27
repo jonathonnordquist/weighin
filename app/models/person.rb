@@ -41,7 +41,7 @@ class Person < ActiveRecord::Base
     event_diffs
   end
 
-  def show_league
-    users[0].league.name
+  def league
+    users[0].league
   end
 end
