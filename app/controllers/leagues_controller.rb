@@ -1,7 +1,13 @@
 class LeaguesController < ApplicationController
   def show
-    binding.pry
     @league = League.find(params[:id])
+  end
+
+  def show_event
+    @event = Event.find(params[:lid])
+    @league = League.find(params[:lid])
+    event_people_names = @event.people.map(&:name)
+    @people = @league.get_people.select { |p| event_people_names.include?(p.name) }
   end
 
   def create

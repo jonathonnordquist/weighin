@@ -42,4 +42,6 @@ participants_csv.each do |row|
   league = League.find_or_create_by(name: row['League'])
   name = row['Name']
   Person.find_by(name: name).users[0].update_attributes! league_id: league.id unless Person.find_by(name: name).users[0].league_id
+  event = Events.where(name: row['Event']).first
+  LeagueEventJoins.find_or_create_by(league_id: league.id, event_id: event.id)
 end

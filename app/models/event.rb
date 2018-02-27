@@ -7,4 +7,6 @@ class Event < ActiveRecord::Base
   # Create association with Person model via checkins, setting all queries to return
   # unique records by default
   has_many :people, -> { distinct }, through: :checkins
+  has_many :league_event_joins
+  has_many :leagues, through: :league_event_joins
 end
