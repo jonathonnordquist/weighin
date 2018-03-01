@@ -12,6 +12,8 @@ Perhaps the most difficult part of this for me was building the seed file.  The 
 
 Finally, there are my modifications.  The first thing I did was add some basic navigation to the header, this was so I could get around easilly.  Next I created the neccessary migrations and models for the League feature and implemented a decorator to sort the records by 'up by' value.  After that came building the views and hooking the various pieces together to produce what you see here.
 
+![Database Diagram](https://github.com/cugamer/weighin/blob/master/DB%20Diagram.png)
+
 ### Next steps
 * First thing would be to add tests for the new features.  A good amount was changed here and it needs to be covered.
 * Next would be to refactor the implementation.  This is an initial build and I'd want to clean the code up prior to sending it into the world.
