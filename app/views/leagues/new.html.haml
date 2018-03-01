@@ -1,0 +1,15 @@
+%h1{class: 'text-center'} Please create a New League
+%div
+
+- flash.each do |key, value|
+  .alert{ :class => "alert-#{key}" }
+    %button.close{ :data => { :dismiss => "alert" } } x
+    %strong
+      = value
+%div
+  .input-group
+    = form_for :league, url: leagues_path do |f|
+      %p
+      = f.label :name
+      %br
+      = f.text_field :name, { autocomplete: :off, class: "form-control" }

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'leagues/:lid/show/:eid' => 'leagues#show_event'
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -16,6 +18,7 @@ Rails.application.routes.draw do
   resources :people, only: [:create, :new, :index, :show]
   resources :checkins, only: [:create, :new]
   resources :events, only: [:create, :new, :index, :show,]
+  resources :leagues, only: [:create, :new, :index, :show,]
 
   # Example resource route with options:
   #   resources :products do

@@ -1,0 +1,23 @@
+%h2
+  #{@league.name}
+%h3 Members
+- @league.get_people.each_with_index do |person, index|
+  %table
+    %tr
+      %td{class: 'ordinal'}= index
+      %td{class: "text-left"}=link_to(person.name, person_path(person.id))
+  %br
+
+%h3 Events
+- @league.events.each_with_index do |event, index|
+  %table
+    %tr
+      %td{class: 'ordinal'}= index
+      %td{class: "text-left"}=link_to(event.name, "../leagues/#{@league.id}/show/#{event.id}")
+  %br
+%br
+%br
+%br
+%br
+%br
+%h3
