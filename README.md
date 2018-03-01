@@ -22,6 +22,7 @@ Finally, there are my modifications.  The first thing I did was add some basic n
     * Implement an interface so that individual players can be added to and moved between leagues.
     * Bugfixes.  I can see at least one issue where in the various player names appear repeatedly in the checkin dropdown box.  This would require investigation and elimination, as well as stakeholder input to clarify desired behavior.
 * Address security vulnerabilities.  Github nicely points out that this is a problem, time should be taken to eliminate these.
+* Deployment issues.  Everything is always great on localhost, isn't it?  As you can see from the deployment the person views are not working.  This is because the league information isn't properly being seeded by Heroku for some reason (it doesn't seem to see the Events model.)  This problem doesn't occur locally and would require some investigation to clean out.
 * Feedback.  I'd want as much input from as many sources as possible as to hwo to make this a better application with a cleaner implementation.  
 
 And with that, I'm looking forward to hearing your feedback.  Thank you for a good challenge that got me out of my normal routine and allowed me to improve as a developer.
