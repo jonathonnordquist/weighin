@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'leagues/:lid/show/:eid' => 'leagues#show_event'
-
+#     make thsi an events controller, events exist within leagues under my routing, nest the resource within the league directly
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
